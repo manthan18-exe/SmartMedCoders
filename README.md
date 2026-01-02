@@ -34,26 +34,26 @@ Smart Device (ESP32-based Pillbox)
 
 SMARTMEDCODERS/
 │
-├── frontend/                         # React + Vite Web App
+├── frontend/                     # React + Vite Web Application
 │   ├── public/
 │   │   └── index.html
 │   │
 │   ├── src/
-│   │   ├── assets/                   # Images, icons
-│   │   ├── components/               # Reusable UI components
+│   │   ├── assets/               # Images, icons
+│   │   ├── components/           # Reusable UI components
 │   │   │   ├── Navbar.jsx
 │   │   │   └── ReminderCard.jsx
 │   │   │
-│   │   ├── pages/                    # App pages/screens
+│   │   ├── pages/                # Application pages
 │   │   │   ├── Login.jsx
 │   │   │   ├── Dashboard.jsx
 │   │   │   └── Schedule.jsx
 │   │   │
-│   │   ├── services/                 # API calls
+│   │   ├── services/             # API calls
 │   │   │   └── api.js
 │   │   │
-│   │   ├── App.jsx                   # Root component
-│   │   ├── main.jsx                  # Entry point
+│   │   ├── App.jsx               # Root React component
+│   │   ├── main.jsx              # Entry point
 │   │   └── index.css
 │   │
 │   ├── .gitignore
@@ -63,47 +63,47 @@ SMARTMEDCODERS/
 │   ├── package-lock.json
 │   └── README.md
 │
-├── backend/                          # Node.js + Express API
+├── backend/                      # Node.js + Express Backend
 │   ├── src/
-│   │   ├── routes/                   # API routes
+│   │   ├── routes/               # API routes
 │   │   │   └── reminderRoutes.js
 │   │   │
-│   │   ├── controllers/              # Business logic
+│   │   ├── controllers/          # Business logic
 │   │   │   └── reminderController.js
 │   │   │
-│   │   ├── models/                   # Database models
+│   │   ├── models/               # Database models
 │   │   │   └── Reminder.js
 │   │   │
-│   │   ├── config/                   # DB, MQTT, Firebase configs
+│   │   ├── config/               # DB & MQTT configuration
 │   │   │   ├── db.js
 │   │   │   └── mqtt.js
 │   │   │
-│   │   ├── services/                 # SMS, notifications, MQTT logic
+│   │   ├── services/             # Notifications & helpers
 │   │   │   └── notificationService.js
 │   │   │
-│   │   └── app.js                    # Express app
+│   │   └── app.js                # Express app setup
 │   │
-│   ├── server.js                     # Server entry point
-│   ├── .env                          # Environment variables
+│   ├── server.js                 # Server entry point
+│   ├── .env                      # Environment variables (ignored)
 │   ├── package.json
 │   ├── package-lock.json
 │   └── README.md
 │
-├── device/                           # ESP32 / IoT code
-│   ├── esp32_main.ino                # Main ESP32 logic
-│   ├── mqtt_config.h                 # MQTT broker config
-│   ├── camera_module.ino             # Camera handling
+├── device/                       # ESP32 / IoT Firmware
+│   ├── esp32_main.ino            # Main ESP32 logic
+│   ├── mqtt_config.h             # MQTT broker config
+│   ├── camera_module.ino         # Camera handling
 │   └── README.md
 │
-├── docs/                             # Documentation
+├── docs/                         # Documentation
 │   ├── architecture.png
 │   ├── api_docs.md
-│   ├── flowcharts/
-│   │   ├── system_flow.png
-│   │   └── device_flow.png
+│   └── flowcharts/
+│       ├── system_flow.png
+│       └── device_flow.png
 │
 ├── .gitignore
-└── README.md                         # Main project overview
+└── README.md                     # Main project overview
 
 
 ---
