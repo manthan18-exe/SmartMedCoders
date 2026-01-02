@@ -1,18 +1,203 @@
-# React + Vite
+# 🩺 Smart Medicine Reminder System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Project Overview
+The **Smart Medicine Reminder System** is an end-to-end IoT-based healthcare solution designed to help patients take their medicines on time and in the correct dosage. The system reduces missed doses, wrong medication intake, and caregiver burden by combining a web application, backend server, and a smart IoT device.
 
-Currently, two official plugins are available:
+This project is developed as a team-based system with clear separation between frontend, backend, and device-level development.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🎯 Objectives
+- Improve medication adherence
+- Reduce missed or incorrect doses
+- Provide automated reminders and alerts
+- Enable remote monitoring by caregivers and family members
+- Integrate IoT hardware with a web-based system
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## 🏗️ High-Level System Architecture
+Patient / Caregiver
+│
+▼
+Web Application (Frontend)
+│
+▼
+Backend Server (APIs, Database, Notifications)
+│
+▼
+Smart Device (ESP32-based Pillbox)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📁 Project Folder Structure
+
+SMARTMEDCODERS/
+│
+├── frontend/                         # React + Vite Web App
+│   ├── public/
+│   │   └── index.html
+│   │
+│   ├── src/
+│   │   ├── assets/                   # Images, icons
+│   │   ├── components/               # Reusable UI components
+│   │   │   ├── Navbar.jsx
+│   │   │   └── ReminderCard.jsx
+│   │   │
+│   │   ├── pages/                    # App pages/screens
+│   │   │   ├── Login.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   └── Schedule.jsx
+│   │   │
+│   │   ├── services/                 # API calls
+│   │   │   └── api.js
+│   │   │
+│   │   ├── App.jsx                   # Root component
+│   │   ├── main.jsx                  # Entry point
+│   │   └── index.css
+│   │
+│   ├── .gitignore
+│   ├── eslint.config.js
+│   ├── vite.config.js
+│   ├── package.json
+│   ├── package-lock.json
+│   └── README.md
+│
+├── backend/                          # Node.js + Express API
+│   ├── src/
+│   │   ├── routes/                   # API routes
+│   │   │   └── reminderRoutes.js
+│   │   │
+│   │   ├── controllers/              # Business logic
+│   │   │   └── reminderController.js
+│   │   │
+│   │   ├── models/                   # Database models
+│   │   │   └── Reminder.js
+│   │   │
+│   │   ├── config/                   # DB, MQTT, Firebase configs
+│   │   │   ├── db.js
+│   │   │   └── mqtt.js
+│   │   │
+│   │   ├── services/                 # SMS, notifications, MQTT logic
+│   │   │   └── notificationService.js
+│   │   │
+│   │   └── app.js                    # Express app
+│   │
+│   ├── server.js                     # Server entry point
+│   ├── .env                          # Environment variables
+│   ├── package.json
+│   ├── package-lock.json
+│   └── README.md
+│
+├── device/                           # ESP32 / IoT code
+│   ├── esp32_main.ino                # Main ESP32 logic
+│   ├── mqtt_config.h                 # MQTT broker config
+│   ├── camera_module.ino             # Camera handling
+│   └── README.md
+│
+├── docs/                             # Documentation
+│   ├── architecture.png
+│   ├── api_docs.md
+│   ├── flowcharts/
+│   │   ├── system_flow.png
+│   │   └── device_flow.png
+│
+├── .gitignore
+└── README.md                         # Main project overview
+
+
+---
+
+## 📂 Folder Description
+
+### 🔹 frontend/
+Contains the **web application** used by patients, caregivers, and doctors.
+
+Responsibilities:
+- User authentication
+- Medicine schedule management
+- Alerts and notifications
+- Dashboard and reports
+
+Tech Stack:
+- Vite
+- React
+- HTML, CSS, JavaScript
+
+🔹 backend/
+
+Contains the server-side logic.
+
+
+Responsibilities:
+
+REST API development
+
+Database management
+
+Notification handling (SMS / app alerts)
+
+Communication with IoT device
+
+
+Planned Tech Stack:
+
+Node.js
+
+Express.js
+
+Database (Firebase / MongoDB)
+
+MQTT / HTTP APIs
+
+
+🔹 device/
+
+Contains embedded firmware for the smart pillbox.
+
+
+Responsibilities:
+
+ESP32 firmware
+
+Alarm and reminder control
+
+Sensor / camera integration
+
+Communication with backend server
+
+
+
+Hardware (planned):
+
+ESP32
+
+Camera module
+
+Buzzer / LEDs
+
+Sensors
+
+
+
+🔹 docs/
+
+Contains all project documentation, including:
+
+Architecture diagrams
+
+Flowcharts
+
+API documentation
+
+Design references
+
+🔮 Future Enhancements
+
+Mobile application support
+
+AI-based pill recognition
+
+Voice-based reminders
+
+Advanced analytics and reporting
